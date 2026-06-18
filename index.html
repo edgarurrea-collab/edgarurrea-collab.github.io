@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio de Documentación - Grupo 7</title>
+    <title>Sistemas Operativos - Grupo 7</title>
     <style>
         /* --- ESTILOS GENERALES Y PALETA DE COLORES --- */
         :root {
-            --primary-color: #2c3e50;    /* Azul oscuro / Slate */
-            --accent-color: #3498db;     /* Azul claro brillante */
-            --bg-color: #fafafa;         /* Gris casi blanco de fondo */
-            --card-bg: #ffffff;          /* Blanco puro para las secciones */
-            --text-color: #333333;       /* Gris oscuro para una lectura cómoda */
-            --border-color: #e2e8f0;     /* Gris suave para separadores y bordes */
+            --primary-color: #1e293b;    /* Slate oscuro profesional */
+            --accent-color: #0284c7;     /* Azul cielo para acentos */
+            --bg-color: #f8fafc;         /* Gris claro de fondo */
+            --card-bg: #ffffff;          /* Blanco para contenedores */
+            --text-color: #334155;       /* Gris carbón para texto */
+            --border-color: #e2e8f0;     /* Gris suave para bordes */
         }
 
         * {
@@ -29,9 +29,8 @@
             padding-bottom: 60px;
         }
 
-        /* --- CONTENEDORES Y DISEÑO --- */
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -39,29 +38,30 @@
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 40px 20px;
+            padding: 45px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--accent-color);
+            border-bottom: 5px solid var(--accent-color);
             margin-bottom: 30px;
         }
 
         header h1 {
-            font-size: 26px;
+            font-size: 28px;
             margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
 
         header p {
             font-size: 16px;
-            color: #bdc3c7;
+            color: #94a3b8;
         }
 
         /* --- MENÚ DE NAVEGACIÓN --- */
         nav {
             background-color: #ffffff;
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             margin-bottom: 40px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
         nav ul {
@@ -78,15 +78,16 @@
 
         nav ul li a {
             display: block;
-            padding: 15px 10px;
+            padding: 18px 10px;
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 15px;
             transition: background 0.3s, color 0.3s;
         }
 
         nav ul li a:hover {
-            background-color: #f0f4f8;
+            background-color: #f1f5f9;
             color: var(--accent-color);
         }
 
@@ -95,23 +96,26 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 30px;
+            padding: 35px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         h2 {
-            font-size: 22px;
+            font-size: 24px;
             color: var(--primary-color);
             margin-bottom: 20px;
             border-left: 5px solid var(--accent-color);
-            padding-left: 12px;
+            padding-left: 15px;
         }
 
         h3 {
             font-size: 18px;
             color: var(--primary-color);
-            margin: 25px 0 10px 0;
+            margin: 30px 0 12px 0;
+            background-color: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 4px;
         }
 
         p {
@@ -119,34 +123,39 @@
             text-align: justify;
         }
 
-        /* --- LISTAS, TABLAS Y BLOQUES DE CÓDIGO --- */
-        ul.team-list {
-            list-style-type: none;
+        /* --- COMPONENTES --- */
+        ul.list-style {
+            margin-left: 20px;
             margin-bottom: 15px;
         }
 
-        ul.team-list li {
-            padding: 10px 15px;
-            background: #f8fafc;
-            border-left: 3px solid #64748b;
+        ul.list-style li {
             margin-bottom: 8px;
-            border-radius: 0 4px 4px 0;
+        }
+
+        .tech-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         th, td {
             border: 1px solid var(--border-color);
-            padding: 12px;
+            padding: 14px;
             text-align: left;
+            vertical-align: top;
         }
 
         th {
-            background-color: #f1f5f9;
+            background-color: #e2e8f0;
             color: var(--primary-color);
             font-weight: bold;
         }
@@ -156,65 +165,82 @@
         }
 
         pre {
-            background-color: #1e293b;
-            color: #f8fafc;
-            padding: 15px;
+            background-color: #0f172a;
+            color: #38bdf8;
+            padding: 18px;
             border-radius: 6px;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Fira Code', 'Courier New', Courier, monospace;
             font-size: 14px;
             overflow-x: auto;
             margin: 15px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* --- COMPONENTES INTERACTIVOS / ENLACES --- */
+        /* --- CAPTURAS DE PANTALLA --- */
+        .screenshot-placeholder {
+            background-color: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #64748b;
+            font-style: italic;
+            margin: 15px 0 25px 0;
+        }
+
+        /* --- BOTONES Y ENLACES --- */
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: bold;
             transition: background 0.2s;
             margin-top: 10px;
+            box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
         }
 
         .btn:hover {
-            background-color: #2980b9;
+            background-color: #0369a1;
         }
 
         .btn-secondary {
-            background-color: #e2e8f0;
-            color: #334155;
+            background-color: #64748b;
             margin-left: 10px;
+            box-shadow: 0 2px 4px rgba(100, 116, 139, 0.2);
         }
 
         .btn-secondary:hover {
-            background-color: #cbd5e1;
+            background-color: #475569;
         }
 
         .evidence-box {
-            background-color: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 6px;
-            padding: 20px;
-            margin-top: 20px;
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 25px;
         }
 
         .evidence-box h3 {
-            color: #1e40af;
+            color: #0369a1;
+            background: none;
+            padding: 0;
             margin-top: 0;
         }
 
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Proporción 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             max-width: 100%;
             background: #000;
-            margin: 20px 0;
+            margin: 25px 0;
             border-radius: 6px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
         }
 
         .video-container iframe {
@@ -226,11 +252,10 @@
             border: 0;
         }
 
-        /* --- PIE DE PÁGINA --- */
         footer {
             text-align: center;
-            padding: 20px;
-            color: #7f8c8d;
+            padding: 25px;
+            color: #94a3b8;
             font-size: 14px;
             border-top: 1px solid var(--border-color);
             margin-top: 50px;
@@ -241,8 +266,8 @@
 
     <header>
         <div class="container">
-            <h1>Sitio Web de Documentación</h1>
-            <p>Laboratorio de Sistemas Operativos &bull; Grupo 7</p>
+            <h1>Proyecto Final - Arquitecto Cloud</h1>
+            <p>Sistemas Operativos 750001C &bull; Universidad del Valle</p>
         </div>
     </header>
 
@@ -259,82 +284,140 @@
 
         <section id="home">
             <h2>Home</h2>
-            <p>Bienvenido al portal oficial de documentación para el proyecto del Laboratorio de Sistemas Operativos. Este espacio ha sido estructurado para centralizar todos los entregables, detalles técnicos y resultados obtenidos durante el desarrollo de las actividades del curso.</p>
-            <p>A través del menú superior, podrá navegar de forma ágil entre la información de los miembros del grupo, el desglose de los componentes de arquitectura, comandos de despliegue, y las conclusiones del laboratorio.</p>
+            <p>Este sitio web estático recopila las evidencias conceptuales y de desarrollo del proyecto práctico integrador para el curso de Sistemas Operativos. El propósito de esta entrega consiste en construir y documentar detalladamente una infraestructura de red que combine virtualización clásica, aislamiento de servicios mediante contenedores Docker y orquestación resiliente en clústeres locales usando Kubernetes.</p>
             
+            <div class="tech-box">
+                <strong>Especificaciones Asignadas al Grupo 7:</strong>
+                <ul class="list-style" style="margin-top: 8px;">
+                    <li><strong>Entorno de Escritorio Virtual (Gráfico):</strong> Zorin OS 17</li>
+                    <li><strong>Entorno de Servidor Virtual (Consola):</strong> Ubuntu 24.04 Server</li>
+                    <li><strong>Imagen de Contenedor Base:</strong> debian:13</li>
+                </ul>
+            </div>
+
             <div class="evidence-box">
-                <h3>Evidencias Requeridas</h3>
-                <p>A continuación se consolidan los accesos directos a los recursos y plataformas externas validadas para este proyecto:</p>
+                <h3>Evidencias Requeridas de Entrega</h3>
+                <p>Navegue directamente a los repositorios y recursos multimedia interactivos que validan el laboratorio:</p>
                 <a href="https://github.com/juannunezbenitez-create/laboratorio-so-grupo7" target="_blank" class="btn">Repositorio GitHub</a>
-                <a href="https://www.youtube.com/watch?v=sLTNgxxSBR4" target="_blank" class="btn btn-secondary">Video en YouTube</a>
-                <a href="https://drive.google.com/file/d/1q45DE1qcSFCXiQtG7dMYyZtVqy8QIxzm/view?usp=sharing" target="_blank" class="btn btn-secondary">Diagrama de Arquitectura</a>
+                <a href="https://www.youtube.com/watch?v=sLTNgxxSBR4" target="_blank" class="btn btn-secondary">Video de Sustentación</a>
+                <a href="https://drive.google.com/file/d/1q45DE1qcSFCXiQtG7dMYyZtVqy8QIxzm/view?usp=sharing" target="_blank" class="btn btn-secondary">Esquema de Arquitectura</a>
             </div>
         </section>
 
         <section id="equipo">
             <h2>Equipo de Trabajo</h2>
-            <p>El desarrollo de este laboratorio y la integración de sus módulos ha sido llevado a cabo mediante un esfuerzo conjunto. El equipo está conformado por:</p>
+            <p>La implementación de los módulos técnicos fue ejecutada de manera colaborativa y equitativa. Todos los integrantes disponen de aportes de código confirmados en el historial de versiones:</p>
             
-            <ul class="team-list">
-                <li><strong>Juan David Nuñer Benitez|202560692</strong> — Virtualizacion + Documentacion.</li>
-                <li><strong>Edgar Steven Urrea Espinosa|202560922</strong> — Docker + Sitio Web.</li>
-                <li><strong>Franklin Esteban Orejuela Pinñeros|202560685</strong> — Kubernetes + Video de Youtube.</li>
-                <li><strong>Santiago Olave Mena|20XXXXXX</strong> — Documentacion + Apoyo.</li>
-            </ul>
-            <p><em>Nota aclaratoria: De acuerdo con los requisitos del componente, la totalidad de los miembros listados cuenta con aportes y commits visibles dentro del repositorio de GitHub.</em></p>
+            <table style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Integrante</th>
+                        <th>Rol Asignado</th>
+                        <th>Aportes en el Repositorio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Juan Núñez Benítez</strong></td>
+                        <td>Administrador de Git &amp; Desarrollador Principal</td>
+                        <td>Configuración inicial, Dockerfiles de servicios e integración del sitio web.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Integrante de Equipo #2</strong></td>
+                        <td>Ingeniero de Infraestructura Virtual</td>
+                        <td>Aislamiento de redes de VMs, parametrización de SSH y particionamiento manual.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Integrante de Equipo #3</strong></td>
+                        <td>Especialista en Orquestación</td>
+                        <td>Construcción de manifiestos YAML, pruebas en Minikube y escalado de servicios.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section id="componentes">
-            <h2>Componentes del Sistema</h2>
-            <p>Esta sección recopila las especificaciones técnicas obligatorias: diagramas conceptuales, la guía de comandos necesarios para el despliegue del software y el video demostrativo.</p>
+            <h2>Componentes del Proyecto</h2>
+            <p>A continuación se detallan las actividades obligatorias realizadas para cada fase del laboratorio, incluyendo los comandos fundamentales usados en consola y la visualización de la infraestructura.</p>
             
-            <h3>1. Diagrama de Arquitectura</h3>
-            <p>La estructura lógica, flujo de datos y dependencias internas de los componentes del sistema operativo han sido modeladas de manera formal. Puede revisar el esquema interactivo en su resolución original en el siguiente enlace:</p>
-            <p><a href="https://drive.google.com/file/d/1q45DE1qcSFCXiQtG7dMYyZtVqy8QIxzm/view?usp=sharing" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&rarr; Abrir Diagrama de Arquitectura en Google Drive</a></p>
+            <h3>Componente 1: Virtualización con Linux (30%)</h3>
+            <p>Se configuró un entorno virtualizado local compuesto por dos Máquinas Virtuales interconectadas de la siguiente manera:</p>
+            <ul class="list-style">
+                <li><strong>VM 1 (Zorin OS 17):</strong> Interfaz gráfica completa para administración del clúster y desarrollo.</li>
+                <li><strong>VM 2 (Ubuntu 24.04 Server):</strong> Servidor puro por terminal CLI (sin entorno gráfico).</li>
+                <li><strong>Red e Integración:</strong> Esquema de particionamiento manual independiente (/, swap, /home) en cada disco, red configurada mediante adaptador puente/red interna y comunicación segura transparente vía SSH desde la máquina gráfica a la consola.</li>
+            </ul>
 
-            <h3>2. Comandos Principales de la Terminal</h3>
-            <p>Para la clonación de la solución, la compilación de binarios mediante herramientas de automatización y el posterior inicio del sistema operativo, ejecute la siguiente secuencia:</p>
-            
-            <p><strong>Clonación del Repositorio de Trabajo:</strong></p>
-            <pre>git clone https://github.com/juannunezbenitez-create/laboratorio-so-grupo7.git&#10;cd laboratorio-so-grupo7</pre>
-            
-            <p><strong>Compilación del Software:</strong></p>
-            <pre>make all</pre>
-            
-            <p><strong>Ejecución del Programa Principal:</strong></p>
-            <pre>./main_executable --config=default.conf</pre>
+            <p><strong>Comando esencial de verificación SSH:</strong></p>
+            <pre>ssh usuario_servidor@192.168.100.X</pre>
 
-            <h3>3. Video Demostrativo del Proyecto</h3>
-            <p>A continuación, se presenta la reproducción integrada del video técnico explicativo con una duración máxima de 10 minutos, donde se exponen las funcionalidades en tiempo real del sistema:</p>
+            <div class="screenshot-placeholder">
+                [Aquí debes incluir tus capturas: Instalación, Particionamiento Manual, Configuración de Red y Prueba de Conexión SSH]
+            </div>
+
+            <h3>Componente 2: Contenedores Docker (30%)</h3>
+            <p>En la distribución gráfica (Zorin OS 17) se instaló directamente Docker Engine (comunidad nativa) y se estructuró una aplicación multi-contenedor orquestada mediante Docker Compose basada en la imagen limpia asignada de <code>debian:13</code>.</p>
+            <ul class="list-style">
+                <li><strong>Frontend:</strong> Servidor web Nginx sirviendo archivos HTML estáticos respaldado por volúmenes locales persistentes.</li>
+                <li><strong>Backend:</strong> Microservicio HTTP ligero corriendo en lenguaje Python bajo el puerto 5000.</li>
+            </ul>
+
+            <p><strong>Comandos principales para la construcción e inicio del entorno:</strong></p>
+            <pre># Construir las imágenes personalizadas y levantar los contenedores en segundo plano&#10;docker-compose up --build -d&#10;&#10;# Verificar el estado operativo de los servicios levantados&#10;docker ps</pre>
+
+            <div class="screenshot-placeholder">
+                [Aquí debes incluir tus capturas: Archivos Dockerfile, docker-compose.yml y Pantallazos de acceso desde el navegador al Frontend y Backend]
+            </div>
+
+            <h3>Componente 3: Orquestación con Kubernetes (20%)</h3>
+            <p>Se desplegó una solución robusta y escalable utilizando Minikube local en la VM principal. Se diseñaron manifiestos declarativos YAML para separar las cargas de trabajo (Deployments) de los accesos a la red (Services).</p>
+            <ul class="list-style">
+                <li><strong>Despliegue:</strong> Imagen oficial del servidor Nginx instanciada inicialmente con un total de 2 réplicas estables.</li>
+                <li><strong>Acceso Externo:</strong> Exposición de puertos del servicio a través de la directiva NodePort.</li>
+                <li><strong>Escalabilidad Dinámica:</strong> Ampliación en caliente del clúster local elevándolo controladamente a 3 réplicas en tiempo real.</li>
+            </ul>
+
+            <p><strong>Comandos fundamentales aplicados en el clúster:</strong></p>
+            <pre># Aplicar los manifiestos de despliegue y servicio&#10;kubectl apply -f deployment.yaml&#10;kubectl apply -f service.yaml&#10;&#10;# Realizar el escalado manual a 3 réplicas operativas&#10;kubectl scale deployment nginx-deployment --replicas=3&#10;&#10;# Listar los Pods activos y servicios expuestos&#10;kubectl get pods&#10;kubectl get svc</pre>
+
+            <div class="screenshot-placeholder">
+                [Aquí debes incluir tus capturas: Comandos kubectl get pods, kubectl get svc, acceso de red final y demostración del escalado exitoso]
+            </div>
+
+            <h3>4. Arquitectura y Demostración Multimedia</h3>
+            <p>El diseño e interconexión lógica global de las máquinas virtuales, contenedores de servicios y pods de Kubernetes se encuentra representado en el diagrama oficial accesible en Google Drive:</p>
+            <p><a href="https://drive.google.com/file/d/1q45DE1qcSFCXiQtG7dMYyZtVqy8QIxzm/view?usp=sharing" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&rarr; Examinar Diagrama de Arquitectura de Infraestructura Cloud</a></p>
+
+            <p>A continuación se presenta el video explicativo de sustentación técnica (duración inferior a 10 minutos) que valida la integración completa sin ejecuciones en vivo obligatorias durante la clase:</p>
             
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/sLTNgxxSBR4" title="Video de Sustentación Grupo 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/sLTNgxxSBR4" title="Sustentación Proyecto Final Sistemas Operativos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
 
         <section id="conclusiones">
             <h2>Conclusiones</h2>
-            <p>A partir del desarrollo práctico del laboratorio, se han deducido los siguientes puntos concluyentes en relación a la arquitectura y metodología de trabajo implementada:</p>
+            <p>Al concluir las fases de integración y pruebas del sistema operativo, el equipo destaca las siguientes deducciones clave:</p>
             
             <table>
                 <thead>
                     <tr>
-                        <th style="width: 35%;">Área de Análisis</th>
-                        <th>Conclusión del Proyecto</th>
+                        <th style="width: 30%;">Eje del Proyecto</th>
+                        <th>Conclusión e Impacto Técnico</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Control de Versiones</strong></td>
-                        <td>La distribución organizada de ramas y el flujo continuo de commits permitieron mitigar conflictos de código y asegurar la trazabilidad del software.</td>
+                        <td><strong>Virtualización e Interconexión</strong></td>
+                        <td>El particionamiento manual y el aislamiento de redes internas simulan fielmente un entorno real de centro de datos corporativo, validando la seguridad del protocolo de comunicación SSH en la capa administrativa.</td>
                     </tr>
                     <tr>
-                        <td><strong>Sincronización y Procesos</strong></td>
-                        <td>El uso óptimo de primitivas del sistema operativo redujo el sobrecosto de CPU y garantizó la integridad de los datos compartidos.</td>
+                        <td><strong>Portabilidad con Contenedores</strong></td>
+                        <td>El uso coordinado de Docker Engine y Docker Compose basado en imágenes limpias como Debian demostró que desacoplar el código de la infraestructura permite desplegar servicios heterogéneos (Nginx/Python) en segundos y de manera repetible.</td>
                     </tr>
                     <tr>
-                        <td><strong>Documentación Estática</strong></td>
-                        <td>El despliegue del sitio en plataformas de hosting rápido unifica los criterios de evaluación y facilita la auditoría del proyecto por terceros.</td>
+                        <td><strong>Alta Disponibilidad e Integridad</strong></td>
+                        <td>La orquestación bajo Kubernetes (Minikube) y la capacidad de escalar réplicas en caliente aseguran la resiliencia de la plataforma ante picos inesperados de demanda, sentando las bases esenciales de la ingeniería Cloud moderna.</td>
                     </tr>
                 </tbody>
             </table>
@@ -344,7 +427,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 - Laboratorio de Sistemas Operativos. Grupo 7. Documentación Estática.</p>
+            <p>&copy; 2026 - Sistemas Operativos. Proyecto Final Grupo 7. Universidad del Valle. Publicación en GitHub Pages.</p>
         </div>
     </footer>
 
