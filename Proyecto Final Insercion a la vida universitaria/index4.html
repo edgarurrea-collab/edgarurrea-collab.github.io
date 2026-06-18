@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--Este es el encabezado y los aplicativos de CSS-->
+<head lang="es"> <!--Etiqueta "head" que contiene la información de la pagina-->
+    <meta charset="UTF-8"> <!--Define el tipo de codificación de caracteres-->
+    <title>Pagina de inicio</title>
+<!--Este "Style" define los parametros de css que usare-->
+    <style>
+        .fondo{
+            background-image: url('Recursos 1/fondo.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 1280px;
+            height: 720px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .texto-titulo {
+            position: absolute;
+            top: 30px;              /* vertical: centro */
+            left: 620px;             /* horizontal: centro */
+            transform: translate(-50%, -50%); /* ajusta al centro exacto */
+            color: rgb(255, 255, 255);
+            font-size: 11px;
+            font-weight: bold; /* negrita */
+            text-shadow: 2px 2px 5px rgb(0, 0, 0);  /* para que se lea mejor */
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }  
+        .texto {
+            position: absolute;
+            top: 100px;              /* vertical: centro */
+            left: 620px;             /* horizontal: centro */
+            transform: translate(-50%, -50%); /* ajusta al centro exacto */
+            color: rgb(255, 255, 255);
+            font-size: 11px;
+            font-weight: bold; /* negrita */
+            text-shadow: 2px 2px 5px rgb(0, 0, 0);  /* para que se lea mejor */
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        .texto-titulo-2 {
+            position: absolute;
+            top: 180px;              /* vertical: centro */
+            left: 350px;             /* horizontal: centro */
+            transform: translate(-50%, -50%); /* ajusta al centro exacto */
+            color: rgb(255, 255, 255);
+            font-size: 11px;
+            font-weight: bold; /* negrita */
+            text-shadow: 2px 2px 5px rgb(0, 0, 0);  /* para que se lea mejor */
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        } 
+        .texto-parrafo-2 {
+            position: absolute;
+            top: 250px;              /* vertical: centro */
+            left: 350px;             /* horizontal: centro */
+            transform: translate(-50%, -50%); /* ajusta al centro exacto */
+            color: white;
+            font-size: 11px;
+            font-weight: bold; /* negrita */
+            text-shadow: 2px 2px 5px black;  /* para que se lea mejor */
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        .texto-titulo-3 {
+            position: absolute;
+            top: 330px;              /* vertical: centro */
+            left: 620px;             /* horizontal: centro */
+            transform: translate(-50%, -50%); /* ajusta al centro exacto */
+            color: white;
+            font-size: 11px;
+            font-weight: bold; /* negrita */
+            text-shadow: 2px 2px 5px black;  /* para que se lea mejor */
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        .texto-parrafo-3 {
+            position: absolute;
+            top: 390px;              /* vertical: centro */
+            left: 620px;             /* horizontal: centro */
+            transform: translate(-50%, -50%); /* ajusta al centro exacto */
+            color: white;
+            font-size: 11px;
+            font-weight: bold; /* negrita */
+            text-shadow: 2px 2px 5px black;  /* para que se lea mejor */
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        .video{
+            position: absolute;
+            top: 90px; /* Ajusta la posición vertical del video */
+            left: 510px; /* Centra el video horizontalmente */
+            transform: translateX(50% 50%); /* Asegura que el video esté centrado */
+        }
+        .imagen {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 220px; /* Ajusta la posición vertical de la imagen */
+            left: 625px; /* Centra la imagen horizontalmente */
+        }
+    </style>
+</head>
+<!--Este es el bloque de informacion-->
+<body class="fondo">
+    <div  class="texto-titulo"><!--Titulo 1-->
+        <h1>Contexto institucional y ACUERDO 009</h1>
+        <hr>
+    </div>
+    <div class="texto"><!--Texto 1-->
+        <p> 
+        Este tema es la base de algo muy importante, ya que me hizo lucidez sobre
+        lo que estoy haciendo, donde me encuentro, cuales son mis deberes y derechos
+        como estudiante de una educacion superior, esto me hizo reflexionar sobre la importancia
+        de la educacion y el compromiso que tengo con mi formacion profesional.
+        </p>
+    </div> 
+    <div class="texto-titulo-2"><!--Titulo 2-->
+        <h1>¿Que es exactamente el ACUERDO 009?</h1>
+        <hr>
+    </div>
+    <div class="texto-parrafo-2"><!--Texto 2-->
+        <p>
+        El acuerdo 009 es un documento que establece las normas y procedimientos para la<br>
+        organizacion y funcionamiento de las instituciones de educacion superior en Colombia.<br>
+        Este acuerdo es importante porque garantiza la calidad de la educacion y el respeto<br>
+        por los derechos de los estudiantes.<br></p>
+    </div>
+    <div class="texto-titulo-3"><!--Titulo 3-->
+        <h1>¿Por que es importante para mi el acuerdo 009?</h1>
+        <hr>
+    </div>
+    <div class="texto-parrafo-3"><!--Texto 3-->
+        <p>
+        El acuerdo 009 es importante para mi porque me permite conocer mis derechos y deberes<br>
+        como estudiante, ademas de que me ayuda a entender el funcionamiento de la institucion<br>
+        y a participar activamente en la vida academica.<br>
+        </p>
+    </div>
+    <div><!--Estas son las imagenes-->
+        <img src="Recursos 1/acuerdo009.png" style=" 
+        position: absolute;
+        translate: -50%, -50%;
+        top: 70px; /* Ajusta la posición vertical de la imagen */
+        left: 850px; /* Centra la imagen horizontalmente */
+        width: 280px; 
+        height: 275px;">
+        <img src="Recursos 1/manoderecha.png" style="
+        position: absolute;
+        translate: -50%, -50%;
+        top: 160px; /* Ajusta la posición vertical de la imagen */
+        left: 660px; /* Centra la imagen horizontalmente */
+        width: 200px;
+        height: 105px;">
+    </div>    
+</body>
+<!--Estos son los botones para interactuar-->
+<body>
+    <!--El siguiente estilo css permite animar los botones-->
+    <style>
+        @keyframes pulso-img {
+        0% {
+            transform: scale(1);
+        }
+        25% {
+            transform: scale(1.022); /* pulso leve */
+        }
+        50% {
+            transform: scale(1); /* pulso leve */
+        }
+        75% {
+            transform: scale(1.022); /* pulso leve */
+        }
+        100% {
+            transform: scale(1);
+        }
+        
+        }
+        @keyframes pulso-text {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.04); /* pulso leve */
+        }
+        100% {
+            transform: scale(1);
+        }
+        
+        }
+        .pulso-imagen{
+        transition: transform 0.8s ease;
+        translate: 0; /* Asegura que la imagen o texto no se mueva al hacer hover */
+        }
+
+        .pulso-imagen:hover {
+        animation: pulso-img 0.8s ease;
+        }
+        .pulso-texto{
+        transition: transform 0.8s ease;
+        translate: 0; /* Asegura que la imagen o texto no se mueva al hacer hover */
+        }
+
+        .pulso-texto:hover {
+        animation: pulso-text 0.8s ease;
+        }
+    /* Las siguientes etiquetas de css permiten ajustar la posicion de los botones*/
+        .manitaderecha{
+            height: 90px;
+            width: 180px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 470px; /* Ajusta la posición vertical */
+            left: 75%; /* Ajusta la posición horizontal */
+        }
+        .manitaizquierda{
+            height: 90px;
+            width: 180px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 470px; /* Ajusta la posición vertical */
+            left: 25%; /* Ajusta la posición horizontal */
+        }
+        .indice{
+            height: 90px;
+            width: 180px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 470px; /* Ajusta la posición vertical */
+            left: 50%; /* Ajusta la posición horizontal */
+        }
+    </style>
+    <!--Estan son las etiquetas que permiten añadir los botones-->
+    <div class="pulso-imagen">
+        <a href="index5.html"><img src="Recursos 1/manoderecha.png" alt="Siguiente" class="manitaderecha"></a>
+    </div>
+    <div class="pulso-imagen">
+        <a href="index0.html"><img src="Recursos 1/indice.png" alt="indice" class="indice"></a>
+    </div>
+    <div class="pulso-imagen">
+        <a href="index3.html"><img src="Recursos 1/manoizquierda.png" alt="Anterior"class="manitaizquierda"></a>
+    </div>
+</body>
+</html>
