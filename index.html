@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio de Documentación - Grupo 7</title>
+    <style>
+        /* --- ESTILOS GENERALES Y PALETA DE COLORES --- */
+        :root {
+            --primary-color: #2c3e50;    /* Azul oscuro / Slate */
+            --accent-color: #3498db;     /* Azul claro brillante */
+            --bg-color: #fafafa;         /* Gris casi blanco de fondo */
+            --card-bg: #ffffff;          /* Blanco puro para las secciones */
+            --text-color: #333333;       /* Gris oscuro para una lectura cómoda */
+            --border-color: #e2e8f0;     /* Gris suave para separadores y bordes */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* --- CONTENEDORES Y DISEÑO --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            color: #bdc3c7;
+        }
+
+        /* --- MENÚ DE NAVEGACIÓN --- */
+        nav {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        nav ul li {
+            display: table-cell;
+            text-align: center;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0f4f8;
+            color: var(--accent-color);
+        }
+
+        /* --- SECCIONES --- */
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        h2 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 12px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin: 25px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* --- LISTAS, TABLAS Y BLOQUES DE CÓDIGO --- */
+        ul.team-list {
+            list-style-type: none;
+            margin-bottom: 15px;
+        }
+
+        ul.team-list li {
+            padding: 10px 15px;
+            background: #f8fafc;
+            border-left: 3px solid #64748b;
+            margin-bottom: 8px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        pre {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        /* --- COMPONENTES INTERACTIVOS / ENLACES --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #e2e8f0;
+            color: #334155;
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #cbd5e1;
+        }
+
+        .evidence-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .evidence-box h3 {
+            color: #1e40af;
+            margin-top: 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporción 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- PIE DE PÁGINA --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Sitio Web de Documentación</h1>
+            <p>Laboratorio de Sistemas Operativos &bull; Grupo 7</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#componentes">Componentes</a></li>
+                <li><a href="#conclusiones">Conclusiones</a></li>
+            </ul>
+        </nav>
+
+        <section id="home">
+            <h2>Home</h2>
+            <p>Bienvenido al portal oficial de documentación para el proyecto del Laboratorio de Sistemas Operativos. Este espacio ha sido estructurado para centralizar todos los entregables, detalles técnicos y resultados obtenidos durante el desarrollo de las actividades del curso.</p>
+            <p>A través del menú superior, podrá navegar de forma ágil entre la información de los miembros del grupo, el desglose de los componentes de arquitectura, comandos de despliegue, y las conclusiones del laboratorio.</p>
+            
+            <div class="evidence-box">
+                <h3>Evidencias Requeridas</h3>
+                <p>A continuación se consolidan los accesos directos a los recursos y plataformas externas validadas para este proyecto:</p>
+                <a href="https://github.com/juannunezbenitez-create/laboratorio-so-grupo7" target="_blank" class="btn">Repositorio GitHub</a>
+                <a href="https://www.youtube.com/watch?v=sLTNgxxSBR4" target="_blank" class="btn btn-secondary">Video en YouTube</a>
+                <a href="https://drive.google.com/file/d/1q45DE1qcSFCXiQtG7dMYyZtVqy8QIxzm/view?usp=sharing" target="_blank" class="btn btn-secondary">Diagrama de Arquitectura</a>
+            </div>
+        </section>
+
+        <section id="equipo">
+            <h2>Equipo de Trabajo</h2>
+            <p>El desarrollo de este laboratorio y la integración de sus módulos ha sido llevado a cabo mediante un esfuerzo conjunto. El equipo está conformado por:</p>
+            
+            <ul class="team-list">
+                <li><strong>Juan Núñez Benítez</strong> — Desarrollador principal y administrador del control de versiones.</li>
+                <li><strong>Integrante de Equipo #2</strong> — Colaborador técnico en módulos de software.</li>
+                <li><strong>Integrante de Equipo #3</strong> — Encargado de pruebas de integración y análisis arquitectónico.</li>
+            </ul>
+            <p><em>Nota aclaratoria: De acuerdo con los requisitos del componente, la totalidad de los miembros listados cuenta con aportes y commits visibles dentro del repositorio de GitHub.</em></p>
+        </section>
+
+        <section id="componentes">
+            <h2>Componentes del Sistema</h2>
+            <p>Esta sección recopila las especificaciones técnicas obligatorias: diagramas conceptuales, la guía de comandos necesarios para el despliegue del software y el video demostrativo.</p>
+            
+            <h3>1. Diagrama de Arquitectura</h3>
+            <p>La estructura lógica, flujo de datos y dependencias internas de los componentes del sistema operativo han sido modeladas de manera formal. Puede revisar el esquema interactivo en su resolución original en el siguiente enlace:</p>
+            <p><a href="https://drive.google.com/file/d/1q45DE1qcSFCXiQtG7dMYyZtVqy8QIxzm/view?usp=sharing" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&rarr; Abrir Diagrama de Arquitectura en Google Drive</a></p>
+
+            <h3>2. Comandos Principales de la Terminal</h3>
+            <p>Para la clonación de la solución, la compilación de binarios mediante herramientas de automatización y el posterior inicio del sistema operativo, ejecute la siguiente secuencia:</p>
+            
+            <p><strong>Clonación del Repositorio de Trabajo:</strong></p>
+            <pre>git clone https://github.com/juannunezbenitez-create/laboratorio-so-grupo7.git&#10;cd laboratorio-so-grupo7</pre>
+            
+            <p><strong>Compilación del Software:</strong></p>
+            <pre>make all</pre>
+            
+            <p><strong>Ejecución del Programa Principal:</strong></p>
+            <pre>./main_executable --config=default.conf</pre>
+
+            <h3>3. Video Demostrativo del Proyecto</h3>
+            <p>A continuación, se presenta la reproducción integrada del video técnico explicativo con una duración máxima de 10 minutos, donde se exponen las funcionalidades en tiempo real del sistema:</p>
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/sLTNgxxSBR4" title="Video de Sustentación Grupo 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="conclusiones">
+            <h2>Conclusiones</h2>
+            <p>A partir del desarrollo práctico del laboratorio, se han deducido los siguientes puntos concluyentes en relación a la arquitectura y metodología de trabajo implementada:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 35%;">Área de Análisis</th>
+                        <th>Conclusión del Proyecto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Control de Versiones</strong></td>
+                        <td>La distribución organizada de ramas y el flujo continuo de commits permitieron mitigar conflictos de código y asegurar la trazabilidad del software.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sincronización y Procesos</strong></td>
+                        <td>El uso óptimo de primitivas del sistema operativo redujo el sobrecosto de CPU y garantizó la integridad de los datos compartidos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Documentación Estática</strong></td>
+                        <td>El despliegue del sitio en plataformas de hosting rápido unifica los criterios de evaluación y facilita la auditoría del proyecto por terceros.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 - Laboratorio de Sistemas Operativos. Grupo 7. Documentación Estática.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
